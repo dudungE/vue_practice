@@ -1,0 +1,118 @@
+/* 버튼 그룹 */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+
+.button-group button {
+  background: #f2f4f6;
+  color: #222;
+  border: none;
+  border-radius: 18px;
+  padding: 12px 28px;
+  font-size: 1.07em;
+  font-weight: 600;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.05);
+}
+
+.button-group button.active,
+.button-group button:focus {
+  background: #3182f6;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(49,130,246,0.11);
+  outline: none;
+}
+
+/* 테이블 */
+.ranking-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(52,152,219,0.10);
+  margin: 0 auto 32px auto;
+  transition: box-shadow 0.2s;
+}
+
+/* 테이블 헤더 */
+.ranking-table th, .ranking-table td {
+  border: none;
+  padding: 14px 12px;
+  text-align: center;
+  font-size: 1.07em;
+}
+
+.ranking-table th {
+  background: linear-gradient(90deg, #e3f0fa 0%, #f8fbff 100%);
+  color: #2471a3;
+  font-weight: 700;
+  font-size: 1.08em;
+  border-bottom: 2px solid #e9f2fa;
+}
+
+/* 테이블 바디 */
+.ranking-table tr {
+  border-bottom: 1.5px solid #f0f4f8;
+  transition: background 0.18s;
+}
+
+.ranking-table tr:last-child {
+  border-bottom: none;
+}
+
+.ranking-table tr:hover {
+  background: #f4faff;
+}
+
+/* 둥글게 */
+.ranking-table tbody tr:first-child td:first-child {
+  border-top-left-radius: 18px;
+}
+.ranking-table tbody tr:first-child td:last-child {
+  border-top-right-radius: 18px;
+}
+.ranking-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 18px;
+}
+.ranking-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 18px;
+}
+
+/* 등락 색상 */
+.positive {
+  color: #e74c3c;
+  font-weight: 700;
+}
+.negative {
+  color: #3182f6;
+  font-weight: 700;
+}
+
+/* 파란색 줄(왼쪽 border 등) 제거: 아래가 있으면 삭제! */
+.ranking-table td,
+.ranking-table th {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .ranking-table {
+    font-size: 0.96em;
+  }
+  .button-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .button-group button {
+    width: 100%;
+  }
+}

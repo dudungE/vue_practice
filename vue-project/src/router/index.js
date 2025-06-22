@@ -1,11 +1,15 @@
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from '../App.vue' // 또는 Home.vue
+import StockPricePage from '../components/StockPricePage.vue' // 종목 가격 상세 페이지 컴포넌트
 
-// src/router/index.js
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import MainView from '@/views/MainView.vue';
+const routes = [
+  { path: '/', component: Home },
+  { path: '/stocks/:ticker/price', component: StockPricePage }
+]
 
-Vue.use(VueRouter);
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+})
 
-const routes = [{ path: '/', name: 'home', component: MainView }];
-
-export default new VueRouter({ mode: 'history', routes });
+export default router
